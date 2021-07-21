@@ -4,6 +4,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        vaca {
+            storeFile file('C:\\Users\\liguanghao\\Documents\\vaca.jks')
+            storePassword '0168lgh'
+            keyAlias 'key0'
+            keyPassword '0168lgh'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -20,12 +28,14 @@ android {
                 cppFlags '-std=c++17'
             }
         }
+        signingConfig signingConfigs.vaca
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.vaca
         }
     }
     compileOptions {

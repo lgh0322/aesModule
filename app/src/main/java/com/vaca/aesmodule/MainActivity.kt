@@ -12,14 +12,15 @@ class MainActivity : AppCompatActivity() {
         val fuck=ByteArray(16){
             it.toByte()
         }
-        val fuck2=ByteArray(16){
+        val fuck2=ByteArray(160){
             it.toByte()
         }
-        val gg=AES.encry(fuck,fuck2,16)
-        for(k in gg){
-            Log.e("fuck",k.toUByte().toInt().toString())
-        }
-        val xx=AES.decry(fuck,gg,16)
+        val gg=AES.encry(fuck,fuck2,160)
+//        for(k in gg){
+//            Log.e("fuck",k.toUByte().toInt().toString())
+//        }
+//        fuck[15]=0.toByte()
+        val xx=AES.decry(fuck,gg,160)
         for(k in xx){
             Log.e("fuck",k.toUByte().toInt().toString())
         }
