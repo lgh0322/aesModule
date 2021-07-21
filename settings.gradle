@@ -1,0 +1,3 @@
+rootProject.name = "aesModule"
+include ':app'
+include ':aesYes'
